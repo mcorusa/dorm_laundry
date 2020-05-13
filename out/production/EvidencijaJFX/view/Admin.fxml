@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin">
+   <children>
+      <BorderPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #ffff;">
+         <left>
+            <Pane prefHeight="200.0" prefWidth="180.0" style="-fx-background-color: #0598ff;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="22.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/laundry.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
+         </left>
+         <center>
+            <StackPane fx:id="Spane1" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="Pn3student" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <AnchorPane layoutX="-2.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="522.0">
+                           <children>
+                              <TableView fx:id="tableStudent" layoutX="32.0" layoutY="218.0" prefHeight="272.0" prefWidth="347.0">
+                                 <columns>
+                                    <TableColumn fx:id="ColumnStudentID" prefWidth="24.0" text="#" />
+                                    <TableColumn fx:id="ColumnEmployeeName1" prefWidth="102.0" text="Name" />
+                                    <TableColumn fx:id="ColumnEmployeeLastname1" prefWidth="109.0" text="Last name" />
+                                    <TableColumn fx:id="ColumnEmployeeEmail1" prefWidth="115.0" text="Telephone" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="txtSname" layoutX="154.0" layoutY="67.0" prefHeight="25.0" prefWidth="223.0" promptText="Name" />
+                              <TextField fx:id="txtSlastname" layoutX="154.0" layoutY="102.0" prefHeight="25.0" prefWidth="223.0" promptText="Lastname" />
+                              <TextField fx:id="txtStelephone" layoutX="154.0" layoutY="137.0" prefHeight="25.0" prefWidth="223.0" promptText="Telephone" />
+                              <Label layoutX="155.0" layoutY="20.0" text="Student Data:" textFill="#0598ff">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnAddstudent" layoutX="236.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #0598ff;" text="Add" textFill="WHITE" />
+                              <Button fx:id="btnDeletestudent" layoutX="423.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #0598ff;" text="Delete" textFill="WHITE" />
+                              <Button fx:id="BtnBack3" layoutX="16.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/angle-left-01.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <TextField fx:id="txtSid" layoutX="405.0" layoutY="295.0" prefHeight="25.0" prefWidth="86.0" promptText="ID" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Pn2employee" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <AnchorPane layoutX="-2.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="522.0">
+                           <children>
+                              <TableView fx:id="tableEmployee" layoutX="42.0" layoutY="309.0" prefHeight="127.0" prefWidth="438.0">
+                                 <columns>
+                                    <TableColumn fx:id="ColumnEmployeeID" prefWidth="24.0" text="#" />
+                                    <TableColumn fx:id="ColumnEmployeeName" prefWidth="64.0" text="Name" />
+                                    <TableColumn fx:id="ColumnEmployeeLastname" prefWidth="85.0" text="Last name" />
+                                    <TableColumn fx:id="ColumnEmployeeEmail" prefWidth="110.0" text="E-mail" />
+                                    <TableColumn fx:id="ColumnEmployeeUsername" prefWidth="74.0" text="Username" />
+                                    <TableColumn fx:id="ColumnEmployeePassword" text="Password" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="TxtName" layoutX="154.0" layoutY="67.0" prefHeight="25.0" prefWidth="223.0" promptText="Name" />
+                              <TextField fx:id="TxtLastname" layoutX="154.0" layoutY="102.0" prefHeight="25.0" prefWidth="223.0" promptText="Lastname" />
+                              <TextField fx:id="TxtEmail" layoutX="154.0" layoutY="137.0" prefHeight="25.0" prefWidth="223.0" promptText="Email" />
+                              <TextField fx:id="TxtUsername" layoutX="154.0" layoutY="172.0" prefHeight="25.0" prefWidth="222.0" promptText="Username" />
+                              <PasswordField fx:id="TxtPassword" layoutX="155.0" layoutY="207.0" prefHeight="25.0" prefWidth="220.0" promptText="Password" />
+                              <Label layoutX="155.0" layoutY="20.0" text="Employee Data:" textFill="#0598ff">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnAddemployee" layoutX="236.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #0598ff;" text="Add" textFill="WHITE" />
+                              <Button fx:id="BtnDelete" layoutX="265.0" layoutY="449.0" mnemonicParsing="false" style="-fx-background-color: #0598ff;" text="Delete" textFill="WHITE" />
+                              <Button fx:id="BtnBack2" layoutX="16.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/angle-left-01.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <TextField fx:id="TxtID" layoutX="169.0" layoutY="449.0" prefHeight="25.0" prefWidth="86.0" promptText="ID" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Pn5reports" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <AnchorPane prefHeight="500.0" prefWidth="520.0">
+                           <children>
+                              <Button fx:id="BtnBack5" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="46.0" prefWidth="48.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/angle-left-01.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Pn4machine" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <AnchorPane layoutX="-2.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="522.0">
+                           <children>
+                              <TableView fx:id="tableMachine" layoutX="40.0" layoutY="149.0" prefHeight="153.0" prefWidth="164.0">
+                                 <columns>
+                                    <TableColumn fx:id="ColumnEmployeeID11" prefWidth="24.0" text="#" />
+                                    <TableColumn fx:id="ColumnEmployeeName11" prefWidth="141.0" text="Model" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="txtModel" layoutX="154.0" layoutY="67.0" prefHeight="25.0" prefWidth="223.0" promptText="Model of Machine" />
+                              <Label layoutX="155.0" layoutY="20.0" text="Machines and Cycles" textFill="#0598ff">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnAddMachine" layoutX="212.0" layoutY="102.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #0598ff;" text="Add Machine" textFill="WHITE" />
+                              <Button fx:id="btnRemoveMachine" layoutX="99.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #0598ff;" text="Remove Machine" textFill="WHITE" />
+                              <Button fx:id="BtnBack4" layoutX="15.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="49.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/angle-left-01.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <TextField fx:id="txtMachineIDremove" layoutX="39.0" layoutY="317.0" prefHeight="25.0" prefWidth="54.0" promptText="ID" />
+                              <TextField fx:id="txtMachineIDadd" layoutX="261.0" layoutY="176.0" prefHeight="25.0" prefWidth="216.0" promptText="ID of Machine" />
+                              <TextField fx:id="txtType" layoutX="261.0" layoutY="211.0" prefHeight="25.0" prefWidth="216.0" promptText="Type" />
+                              <TextField fx:id="txtDuration" layoutX="261.0" layoutY="250.0" prefHeight="25.0" prefWidth="216.0" promptText="Duration" />
+                              <TextField fx:id="txtPrice" layoutX="261.0" layoutY="287.0" prefHeight="25.0" prefWidth="216.0" promptText="Price" />
+                              <Button fx:id="btnAddCycle" layoutX="293.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #0598ff;" text="Add Cycle to Machine" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="Pn1admin" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <Button fx:id="BtnAddemployee" contentDisplay="TOP" layoutX="90.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Employees" textFill="#0598ff">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/user-edit-01-01.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="BtnAddstudent" contentDisplay="TOP" layoutX="90.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Students" textFill="#0598ff">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/user-graduate-01.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="BtnReports" contentDisplay="TOP" layoutX="289.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Reports" textFill="#0598ff">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="45.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/reportt.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="BtnAddmachine" contentDisplay="TOP" layoutX="289.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Machines" textFill="#0598ff">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/machine-01.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
