@@ -137,6 +137,7 @@ public class Table {
             id.set(this, rs.getInt(1));
         }
     }
+
     public void update() throws Exception {
         String tableName = getTableName(getClass());
         StringBuilder UPDATE_SQL_QUERY = new StringBuilder();

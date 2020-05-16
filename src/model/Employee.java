@@ -1,6 +1,6 @@
 package model;
 
-/* Klasa nesmije imati konstruktor */
+/* Klasa ne smije imati konstruktor */
 /* Klasa mora imati get i set metode za sve atribute*/
 
 import javafx.collections.FXCollections;
@@ -121,6 +121,19 @@ public class Employee extends Table {
             return employees;
         }
     }
+    public static Employee login (String username, String password) throws Exception {
+        String sql = "SELECT id FROM Employee where username=? AND password=?";
+        PreparedStatement query = Database.CONNECTION.prepareStatement(sql);
+        query.setString(1, username);
+        query.setString(2, password);
+        ResultSet rs = query.executeQuery();
 
+        if(rs.next()){
+            return(Employee) Employee.get(Employee.class,  rs.getInt(1));
+        } else{
+            return  null;
+        }
+
+    }
 
 }

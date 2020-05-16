@@ -162,7 +162,7 @@
                   </Pane>
                   <Pane fx:id="Pn1admin" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                      <children>
-                        <Button fx:id="BtnAddemployee" contentDisplay="TOP" layoutX="90.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Employees" textFill="#0598ff">
+                        <Button fx:id="BtnAddemployee" contentDisplay="TOP" layoutX="90.0" layoutY="133.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Employees" textFill="#0598ff">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -174,7 +174,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="BtnAddstudent" contentDisplay="TOP" layoutX="90.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Students" textFill="#0598ff">
+                        <Button fx:id="BtnAddstudent" contentDisplay="TOP" layoutX="90.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Students" textFill="#0598ff">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -186,7 +186,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="BtnReports" contentDisplay="TOP" layoutX="289.0" layoutY="258.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Reports" textFill="#0598ff">
+                        <Button fx:id="BtnReports" contentDisplay="TOP" layoutX="289.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Reports" textFill="#0598ff">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -198,7 +198,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="BtnAddmachine" contentDisplay="TOP" layoutX="289.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Machines" textFill="#0598ff">
+                        <Button fx:id="BtnAddmachine" contentDisplay="TOP" layoutX="289.0" layoutY="133.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="92.0" prefWidth="141.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" text="Machines" textFill="#0598ff">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -209,6 +209,11 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                        </Button>
+                        <Button fx:id="btnLogOut" layoutX="427.0" layoutY="18.0" mnemonicParsing="false" onAction="#Logout" prefHeight="29.0" prefWidth="73.0" style="-fx-background-color: #0598ff;" text="Log Out" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
                         </Button>
                      </children>
                   </Pane>

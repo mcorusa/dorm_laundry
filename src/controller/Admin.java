@@ -9,6 +9,7 @@ import javafx.scene.layout.Pane;
 import model.*;
 import main.Main;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -219,5 +220,10 @@ public class Admin implements Initializable {
         if(event.getSource().equals(BtnBack2) || event.getSource().equals(BtnBack3) || event.getSource().equals(BtnBack4) || event.getSource().equals(BtnBack5)) {
             Pn1admin.toFront();
         }
+    }
+    @FXML
+    public  void Logout (ActionEvent ev) throws IOException {
+        Main.showWindow(getClass(), "../view/Login.fxml", "Login", 700, 500);
+        Login.loggedInEmployee=null;
     }
 }
