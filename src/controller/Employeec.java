@@ -10,7 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import main.Main;
-import sun.rmi.runtime.Log;
+import model.Student;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class Employeec implements Initializable {
 
-    //employee menu
+    //-----------------------------employee menu-----------------------------
     @FXML
     private Pane Pn1employee;
     @FXML
@@ -31,14 +31,28 @@ public class Employeec implements Initializable {
     Button BtnReservations;
 
 
-    //employee student
+    //-----------------------------employee student-----------------------------
     @FXML
     private Pane Pn2student;
+    //buttons
     @FXML
     Button btnBacks;
+    @FXML
+    Button btnAddstudent;
+    @FXML
+    Button btnDeletestudent;
+    //text fields
+    @FXML
+    TextField txtSname;
+    @FXML
+    TextField txtSlastname;
+    @FXML
+    TextField txtStelephone;
+    @FXML
+    TextField txtSid;
 
 
-    //employee reservation
+    //-----------------------------employee reservation-----------------------------
     @FXML
     private Pane Pn3reservation;
     //buttons
@@ -48,7 +62,6 @@ public class Employeec implements Initializable {
     Button btnMakeReservation;
     @FXML
     Button btnRemoveReservation;
-
     //text fields
     @FXML
     TextField txtSnameReservation;
@@ -58,7 +71,6 @@ public class Employeec implements Initializable {
     TextField txtCycle;
     @FXML
     TextField txtTime;
-
     //table
     @FXML
     TableView tableReservations;
@@ -73,6 +85,24 @@ public class Employeec implements Initializable {
         }
         if(event.getSource().equals(btnBackr) || event.getSource().equals(btnBacks)) {
             Pn1employee.toFront();
+        }
+
+        // add student to db
+        if(event.getSource().equals(btnAddstudent)){
+            Student st = new Student();
+            st.setFirstname(this.txtSname.getText());
+            st.setLastname(this.txtSlastname.getText());
+            st.setTelephone(this.txtStelephone.getText());
+
+            try {
+                st.save();
+                this.txtSname.setText("");
+                this.txtSlastname.setText("");
+                this.txtStelephone.setText("");
+
+            } catch (Exception e) {
+                System.out.println("Nope");
+            }
         }
     }
     @Override
