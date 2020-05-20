@@ -1,20 +1,28 @@
 package controller;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import model.*;
 import main.Main;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
 
 public class Admin implements Initializable {
 
+    @FXML
+    final ObservableList listOfCycles = FXCollections.observableArrayList();
     // admin menu
     @FXML
     private Pane Pn1admin;
@@ -80,13 +88,15 @@ public class Admin implements Initializable {
     @FXML
     TextField txtModel;
     @FXML
-    TextField txtMachineIDadd;
-    @FXML
     TextField txtType;
     @FXML
     TextField txtDuration;
     @FXML
     TextField txtPrice;
+    @FXML
+    TextField txtMachineIDadd;
+    @FXML
+    ComboBox cmbCycles;
 
     @FXML
     Button btnAddMachine;
@@ -94,6 +104,8 @@ public class Admin implements Initializable {
     Button btnRemoveMachine;
     @FXML
     Button btnAddCycle;
+    @FXML
+    Button btnAddCycleOnMachine;
     @FXML
     Button BtnBack4;
 
@@ -104,18 +116,24 @@ public class Admin implements Initializable {
     Button BtnBack5;
 
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.ColumnEmployeeID.setCellValueFactory(new PropertyValueFactory<>("ID"));
-        this.ColumnEmployeeName.setCellValueFactory(new PropertyValueFactory<>("firstname"));
-        this.ColumnEmployeeLastname.setCellValueFactory(new PropertyValueFactory<>("lastname"));
-        this.ColumnEmployeeEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
-        this.ColumnEmployeeUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
-        this.ColumnEmployeePassword.setCellValueFactory(new PropertyValueFactory<>("password"));
 
+        this.cmbCycles.setItems(FXCollections
+                .observableArrayList(listOfCycles));
+
+
+
+      /*  // Weekdays
+        String week_days[] =
+                { "Monday", "Tuesday", "Wednesday",
+                        "Thrusday", "Friday" };
+        this.cmbCycles.setItems(FXCollections
+                .observableArrayList(week_days));
+*/
     }
+
+
 
     @FXML
     private void handleButtonAction(ActionEvent event){
@@ -123,19 +141,20 @@ public class Admin implements Initializable {
         if(event.getSource().equals(BtnAddemployee)){
             Pn2employee.toFront();
         }
-
         if(event.getSource().equals(BtnAddstudent)){
             Pn3student.toFront();
         }
-
         if(event.getSource().equals(BtnAddmachine)) {
             Pn4machine.toFront();
+            try {
+                this.updatecombo() ;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
         if(event.getSource().equals(BtnReports)) {
             Pn5reports.toFront();
         }
-
 
         if(event.getSource().equals(btnAddemployee)){
             Employee em = new Employee();
@@ -211,10 +230,11 @@ public class Admin implements Initializable {
 
             try {
                 cm.save();
+                this.txtMachineIDadd.setText("");
             } catch (Exception e) {
                 System.out.println("Help me------------------primarykey");
             }
-            this.txtMachineIDadd.setText("");
+
         }
 
         if(event.getSource().equals(BtnBack2) || event.getSource().equals(BtnBack3) || event.getSource().equals(BtnBack4) || event.getSource().equals(BtnBack5)) {
@@ -225,5 +245,34 @@ public class Admin implements Initializable {
     public  void Logout (ActionEvent ev) throws IOException {
         Main.showWindow(getClass(), "../view/Login.fxml", "Login", 700, 500);
         Login.loggedInEmployee=null;
+
+
     }
+
+
+    public void updatecombo() throws SQLException {
+        String sql = "Select * from Cycle";
+        PreparedStatement pst = null;
+
+        try {
+            pst = Database.CONNECTION.prepareStatement(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        ResultSet rs = pst.executeQuery();
+            while (rs.next()){
+
+                 ObservableList<Cycle> listOfCycles = FXCollections.observableArrayList();
+
+                try {
+                    listOfCycles.add((Cycle) Cycle.get(Cycle.class,  rs.getInt(2)));
+                    this.cmbCycles.setItems(FXCollections.observableArrayList(listOfCycles));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+    }
+
+
 }
