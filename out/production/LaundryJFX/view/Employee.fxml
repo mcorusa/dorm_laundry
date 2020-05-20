@@ -30,6 +30,41 @@
          <center>
             <StackPane fx:id="Spane1" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
+                  <Pane fx:id="Pn3reservation" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                     <children>
+                        <AnchorPane layoutX="-2.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="522.0">
+                           <children>
+                              <TableView fx:id="tableReservations" layoutX="40.0" layoutY="305.0" prefHeight="153.0" prefWidth="165.0">
+                                 <columns>
+                                    <TableColumn fx:id="ColumnReservationID" prefWidth="24.0" text="#" />
+                                    <TableColumn fx:id="ColumnReservationFullname" prefWidth="141.0" text="Name and Surname" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="txtSnameReservation" layoutX="154.0" layoutY="67.0" prefHeight="25.0" prefWidth="223.0" promptText="Name" />
+                              <Label layoutX="155.0" layoutY="20.0" text="Reservation Details:" textFill="#0598ff">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnRemoveReservation" layoutX="327.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="134.0" style="-fx-background-color: #0598ff;" text="Remove Reservation" textFill="WHITE" />
+                              <Button fx:id="btnBackr" layoutX="15.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="49.0" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/angle-left-01.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <TextField fx:id="txtReservationIDremove" layoutX="342.0" layoutY="329.0" prefHeight="25.0" prefWidth="54.0" promptText="ID" />
+                              <TextField fx:id="txtSlastnameReservation" layoutX="153.0" layoutY="104.0" prefHeight="25.0" prefWidth="225.0" promptText="Lastname" />
+                              <TextField fx:id="txtCycle" layoutX="153.0" layoutY="141.0" prefHeight="25.0" prefWidth="225.0" promptText="Cycle" />
+                              <TextField fx:id="txtTime" layoutX="153.0" layoutY="181.0" prefHeight="25.0" prefWidth="225.0" promptText="Time" />
+                              <Button fx:id="btnMakeReservation" layoutX="180.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #0598ff;" text="Make Reservation" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
                   <Pane fx:id="Pn2student" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                      <children>
                         <AnchorPane layoutX="-2.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="522.0">
@@ -62,41 +97,6 @@
                                  </graphic>
                               </Button>
                               <TextField fx:id="txtSid" layoutX="405.0" layoutY="295.0" prefHeight="25.0" prefWidth="86.0" promptText="ID" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="Pn3reservation" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
-                     <children>
-                        <AnchorPane layoutX="-2.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="522.0">
-                           <children>
-                              <TableView fx:id="tableReservations" layoutX="40.0" layoutY="305.0" prefHeight="153.0" prefWidth="165.0">
-                                 <columns>
-                                    <TableColumn fx:id="ColumnReservationID" prefWidth="24.0" text="#" />
-                                    <TableColumn fx:id="ColumnReservationFullname" prefWidth="141.0" text="Name and Surname" />
-                                 </columns>
-                              </TableView>
-                              <TextField fx:id="txtSnameReservation" layoutX="154.0" layoutY="67.0" prefHeight="25.0" prefWidth="223.0" promptText="Name" />
-                              <Label layoutX="155.0" layoutY="20.0" text="Reservation Details:" textFill="#0598ff">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="btnRemoveReservation" layoutX="327.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="134.0" style="-fx-background-color: #0598ff;" text="Remove Reservation" textFill="WHITE" />
-                              <Button fx:id="btnBackr" layoutX="15.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="49.0" style="-fx-background-color: transparent;">
-                                 <graphic>
-                                    <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../image/angle-left-01.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                              <TextField fx:id="txtReservationIDremove" layoutX="342.0" layoutY="329.0" prefHeight="25.0" prefWidth="54.0" promptText="ID" />
-                              <TextField fx:id="txtSlastnameReservation" layoutX="153.0" layoutY="104.0" prefHeight="25.0" prefWidth="225.0" promptText="Lastname" />
-                              <TextField fx:id="txtCycle" layoutX="153.0" layoutY="141.0" prefHeight="25.0" prefWidth="225.0" promptText="Cycle" />
-                              <TextField fx:id="txtTime" layoutX="153.0" layoutY="181.0" prefHeight="25.0" prefWidth="225.0" promptText="Time" />
-                              <Button fx:id="btnMakeReservation" layoutX="180.0" layoutY="228.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #0598ff;" text="Make Reservation" textFill="WHITE" />
                            </children>
                         </AnchorPane>
                      </children>
